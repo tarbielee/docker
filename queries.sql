@@ -11,4 +11,6 @@ WHERE customerid = 1;
 DELETE FROM customer
 WHERE customerid = 2;
 
+--
+
 
