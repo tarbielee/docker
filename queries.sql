@@ -1,4 +1,4 @@
-SELECT * from customer
+SELECT * from customer;
 
 SELECT firstname From customer;
 
@@ -24,6 +24,8 @@ SELECT * FROM customer WHERE country ='Germany' and city ='Berlin';
 SELECT * FROM customer WHERE city ='Cape Town' OR city ='Durban';
 
 SELECT * FROM products WHERE buyprice > 'R500';
+
+SELECT sum(amount) FROM payments;
 
 SELECT count( * ) FROM orders WHERE status = 'Shipped';
 
