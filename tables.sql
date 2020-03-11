@@ -89,12 +89,12 @@ CREATE TABLE "public"."products" (
     "productid" integer DEFAULT nextval('products_productid_seq') NOT NULL,
     "productname" character varying(100),
     "description" character varying(300),
-    "buyprice" character varying,
+    "buyprice" decimal,
     CONSTRAINT "products_pkey" PRIMARY KEY ("productid")
 ) WITH (oids = false);
 
 TRUNCATE "products";
 INSERT INTO "products" ("productid", "productname", "description", "buyprice") VALUES
-(1,	'Harley Davidson Chopper',	'This replica features working kickstand, front suspension, gear-shift lever',	'R150.75'),
-(2,	'Classic Car',	'Turnable front wheels, steering function',	'R550.75'),
-(3,	'Sports car',	'Turnable front wheels, steering function',	'R700.60');
+(1,	'Harley Davidson Chopper',	'This replica features working kickstand, front suspension, gear-shift lever',	'150.75'),
+(2,	'Classic Car',	'Turnable front wheels, steering function',	'550.75'),
+(3,	'Sports car',	'Turnable front wheels, steering function',	'700.60');
