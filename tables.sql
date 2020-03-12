@@ -1,30 +1,25 @@
-DROP TABLE IF EXISTS "customer";
-DROP SEQUENCE IF EXISTS customer_customerid_seq;
-CREATE SEQUENCE customer_customerid_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 10 CACHE 1;
+CREATE TABLE customer (
+   
+Customerid SERIAL PRIMARY KEY,	
+FirstName varchar(50),	
+LastName varchar(50),	
+Gender varchar,	
+Address varchar(200),	
+Phone varchar (10),	
+Email varchar(100),	
+City varchar(20),	
+Country varchar(50)
+);
 
-CREATE TABLE "public"."customer" (
-    "customerid" integer DEFAULT nextval('customer_customerid_seq') NOT NULL,
-    "firstname" character varying(50),
-    "lastname" character varying(50),
-    "gender" character varying,
-    "address" character varying(200),
-    "phone" character varying,
-    "email" character varying(100),
-    "city" character varying(20),
-    "country" character varying(50),
-    CONSTRAINT "customer_pkey" PRIMARY KEY ("customerid")
-) WITH (oids = false);
+INSERT INTO customer 
+VALUES
+(1, 'John', 'Hibert', 'Male', '284 chaucer st', 084789657, 'john@gmail.com', 'Johannesburg', 'South Africa'),
+(2, 'Thando', 'Sithole', 'Female', '240 Sect 1', 0794445584, 'thando@gmail.com', 'Cape Town', 'South Africa'),
+(3, 'Leon', 'Glen', 'Male', '81 Everton Rd,Gillits', 0820832830, 'Leon@gmail.com', 'Durban', 'South Africa'),
+(4, 'Charl', 'Muller', 'Male', '290A Dorset Ecke', 44856872553, 'Charl.muller@yahoo.com', 'Berlin', 'Germany'),
+(5, 'Julia', 'Stein', 'Female', '2 Wernerring', 448672445058, 'Js234@yahoo.com', 'Frankfurt', 'Germany');
 
-TRUNCATE "customer";
-INSERT INTO "customer" ("customerid", "firstname", "lastname", "gender", "address", "phone", "email", "city", "country") VALUES
-(3,	'Leon',	'Glen',	'Male',	'81 Everton Rd,Gillits',	'820832830',	'Leon@gmail.com',	'Durban',	'South Africa'),
-(4,	'Charl',	'Muller',	'Male',	'290A Dorset Ecke',	'44856872553',	'Charl.muller@yahoo.com',	'Berlin',	'Germany'),
-(5,	'Julia',	'Stein',	'Female',	'2 Wernerring',	'448672445058',	'Js234@yahoo.com',	'Frankfurt',	'Germany'),
-(1,	'Lerato',	'Mabitso',	'Male',	'284 chaucer st',	'84789657',	'john@gmail.com',	'Johannesburg',	'South Africa');
 
-DROP TABLE IF EXISTS "employee";
-DROP SEQUENCE IF EXISTS employee_employeeid_seq;
-CREATE SEQUENCE employee_employeeid_seq INCREMENT 1 MINVALUE 1 MAXVALUE 9223372036854775807 START 1 CACHE 1;
 
 CREATE TABLE "public"."employee" (
     "employeeid" integer DEFAULT nextval('employee_employeeid_seq') NOT NULL,
